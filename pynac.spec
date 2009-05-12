@@ -16,6 +16,9 @@ Source:		pynac-0.1.1.tar.bz2
 URL:		http://wiki.sagemath.org/spkg/pynac
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
+BuildRequires:	libreadline-devel
+BuildRequires:	python-devel
+
 %description
 A modified version of GiNaC that replaces the dependency on CLN by Python.
 
