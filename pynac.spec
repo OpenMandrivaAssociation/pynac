@@ -32,6 +32,8 @@ A modified version of GiNaC that replaces the dependency on CLN by Python.
 %package	-n %{devname}
 Summary:	Modified GiNaC that replaces the dependency on CLN by Python
 Group:		Development/C++
+Provides:	%{name}-devel = %{version}-%{release}
+Provides:	lib%{name}-devel = %{version}-%{release}
 
 %description	-n %{devname}
 A modified version of GiNaC that replaces the dependency on CLN by Python.
