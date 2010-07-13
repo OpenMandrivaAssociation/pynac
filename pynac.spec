@@ -9,7 +9,7 @@ Name:		%{name}
 Group:		Sciences/Mathematics
 License:	GPL
 Summary:	Modified GiNaC that replaces the dependency on CLN by Python
-Version:	0.1.11
+Version:	0.2.0.p3
 Release:	%mkrel 1
 # pynac-%{version}.spkg from sage tarball renamed
 Source:		pynac-%{version}.tar.bz2
