@@ -9,13 +9,14 @@ Name:		%{name}
 Group:		Sciences/Mathematics
 License:	GPL
 Summary:	Modified GiNaC that replaces the dependency on CLN by Python
-Version:	0.2.1
+Version:	0.2.3
 Release:	%mkrel 1
 # pynac-%{version}.spkg from sage tarball renamed
 Source:		pynac-%{version}.tar.bz2
 URL:		http://wiki.sagemath.org/spkg/pynac
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
+BuildRequires:	automake
 BuildRequires:	libreadline-devel
 BuildRequires:	python-devel
 
