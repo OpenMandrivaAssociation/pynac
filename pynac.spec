@@ -2,42 +2,41 @@
 %define		_disable_ld_no_undefined	1
 
 %define		name		pynac
-%define		libname		%mklibname %{name}
-%define		devname		%mklibname %{name} -d
+%define		libpynac	%mklibname %{name}
+%define		libpynac_devel	%mklibname %{name} -d
 
 Name:		%{name}
 Group:		Sciences/Mathematics
-License:	GPL
+License:	GPLv2+
 Summary:	Modified GiNaC that replaces the dependency on CLN by Python
-Version:	0.2.3
-Release:	%mkrel 1
+Version:	0.2.4
+Release:	1
 # pynac-%{version}.spkg from sage tarball renamed
 Source:		pynac-%{version}.tar.bz2
 URL:		http://wiki.sagemath.org/spkg/pynac
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 BuildRequires:	automake
-BuildRequires:	libreadline-devel
-BuildRequires:	python-devel
+BuildRequires:	readline-devel
+%py_requires -d
 
 %description
 A modified version of GiNaC that replaces the dependency on CLN by Python.
 
-%package	-n %{libname}
+%package	-n %{libpynac}
 Summary:	Modified GiNaC that replaces the dependency on CLN by Python
 Group:		System/Libraries
-Provides:	lib%{name} = %{version}-%{release}
 
-%description	-n %{libname}
+%description	-n %{libpynac}
 A modified version of GiNaC that replaces the dependency on CLN by Python.
 
-%package	-n %{devname}
+%package	-n %{libpynac_devel}
 Summary:	Modified GiNaC that replaces the dependency on CLN by Python
 Group:		Development/C++
+Requires:	%{libpynac} = %{version}-%{release}
 Provides:	%{name}-devel = %{version}-%{release}
-Requires:	lib%{name} = %{version}-%{release}
 
-%description	-n %{devname}
+%description	-n %{libpynac_devel}
 A modified version of GiNaC that replaces the dependency on CLN by Python.
 
 %prep
@@ -52,18 +51,14 @@ autoreconf
 
 %install
 %makeinstall_std
+mkdir -p %{buildroot}%{_docdir}/%{name}
+cp -a AUTHORS ChangeLog COPYING NEWS README %{buildroot}%{_docdir}/%{name}
 
-%clean
-rm -rf %{buildroot}
-
-%files		-n %{libname}
-%defattr(-,root,root)
+%files		-n %{libpynac}
+%doc %{_docdir}/%{name}
 %{_libdir}/lib*.so.*
 
-%files		-n %{devname}
-%defattr(-,root,root)
-%dir %{_includedir}/%{name}
-%{_includedir}/%{name}/*
-%{_libdir}/lib*.la
+%files		-n %{libpynac_devel}
+%{_includedir}/%{name}
 %{_libdir}/lib*.so
 %{_libdir}/pkgconfig/*
