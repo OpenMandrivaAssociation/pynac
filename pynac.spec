@@ -62,3 +62,57 @@ cp -a AUTHORS ChangeLog COPYING NEWS README %{buildroot}%{_docdir}/%{name}
 %{_includedir}/%{name}
 %{_libdir}/lib*.so
 %{_libdir}/pkgconfig/*
+
+
+%changelog
+* Tue Aug 21 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.2.4-1
++ Revision: 815557
+- Update to latest upstream release.
+
+* Mon Aug 29 2011 Paulo Andrade <pcpa@mandriva.com.br> 0.2.3-1
++ Revision: 697340
+- Update to latest upstream release.
+
+* Wed Nov 10 2010 Paulo Andrade <pcpa@mandriva.com.br> 0.2.1-1mdv2011.0
++ Revision: 595698
+- Update to pynac 0.2.1.
+
+* Thu Nov 04 2010 Paulo Andrade <pcpa@mandriva.com.br> 0.2.0.p3-2mdv2011.0
++ Revision: 593486
++ rebuild (emptylog)
+
+* Wed Jul 14 2010 Paulo Andrade <pcpa@mandriva.com.br> 0.2.0.p3-1mdv2011.0
++ Revision: 552962
+- Update to version 0.2.0 patchlevel 3.
+
+* Fri Feb 26 2010 Paulo Andrade <pcpa@mandriva.com.br> 0.1.11-1mdv2010.1
++ Revision: 512168
+- Update to latest upstream release
+
+* Mon Jan 04 2010 Paulo Andrade <pcpa@mandriva.com.br> 0.1.10-1mdv2010.1
++ Revision: 486288
+- Update to pynac 0.1.10.
+
+* Mon Aug 31 2009 Paulo Andrade <pcpa@mandriva.com.br> 0.1.8.p2-1mdv2010.0
++ Revision: 423113
+- update to latest upstream patchlevel (corrects sage trac #6256)
+
+* Wed Jun 17 2009 Paulo Andrade <pcpa@mandriva.com.br> 0.1.8-1mdv2010.0
++ Revision: 386513
+- Update to latest upstream release.
+
+* Mon May 18 2009 Paulo Andrade <pcpa@mandriva.com.br> 0.1.1-3mdv2010.0
++ Revision: 377373
++ rebuild (emptylog)
+
+* Thu May 14 2009 Paulo Andrade <pcpa@mandriva.com.br> 0.1.1-2mdv2010.0
++ Revision: 375749
++ rebuild (emptylog)
+
+* Tue May 12 2009 Paulo Andrade <pcpa@mandriva.com.br> 0.1.1-1mdv2010.0
++ Revision: 374979
+- Initial import of pynac, required by sagemath (and using it's version).
+  Modified GiNaC that replaces the dependency on CLN by Python
+  http://wiki.sagemath.org/spkg/pynac
+- pynac
+
