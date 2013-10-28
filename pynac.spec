@@ -4,12 +4,11 @@
 %{!?pyver: %global pyver %(%{__python} -c "import sys ; print(sys.version[:3])")}
 
 Name:           pynac
-Version:        0.2.5
-Release:        2%{?dist}
+Version:        0.3.0
+Release:        1%{?dist}
 Summary:        Manipulation of symbolic expressions
 License:        GPLv2+
 URL:            http://pynac.sagemath.org/
-#Source0:        http://pynac.sagemath.org/download/pynac-%%{version}.spkg
 Source0:        http://sagemath.org/packages/standard/pynac-%{version}.spkg
 Source1:        %{name}.rpmlintrc
 
