@@ -4,12 +4,12 @@
 %{!?pyver: %global pyver %(%{__python} -c "import sys ; print(sys.version[:3])")}
 
 Name:           pynac
-Version:        0.3.0
+Version:        0.3.2
 Release:        1%{?dist}
 Summary:        Manipulation of symbolic expressions
 License:        GPLv2+
-URL:            http://pynac.sagemath.org/
-Source0:        http://sagemath.org/packages/standard/pynac-%{version}.spkg
+URL:            http://www.sagemath.org/packages/upstream/pynac/index.html
+Source0:        http://www.sagemath.org/packages/upstream/pynac/%{name}-%{version}.tar.bz2
 Source1:        %{name}.rpmlintrc
 
 BuildRequires:  python-devel
@@ -38,18 +38,16 @@ Headers and libraries for developing with %{name}.
 %setup -q
 
 %build
-cd src
 export CXXFLAGS="%{optflags} -I%{_includedir}/python%{pyver}"
-%configure --disable-static
+%configure2_5x --disable-static
 make %{?_smp_mflags}
 
 %install
-cd src
 make install DESTDIR=%{buildroot} INSTALL="install -p"
 rm -f %{buildroot}%{_libdir}/*.la
 
 %files
-%doc src/AUTHORS src/ChangeLog src/COPYING src/NEWS src/README
+%doc AUTHORS ChangeLog COPYING NEWS README
 %{_libdir}/lib%{name}.so.*
 
 %files devel
