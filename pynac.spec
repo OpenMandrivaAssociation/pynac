@@ -1,18 +1,17 @@
 %define		old_libpynac		%mklibname pynac
 %define		old_libpynac_devel	%mklibname pynac -d
 
-%{!?pyver: %global pyver %(%{__python} -c "import sys ; print(sys.version[:3])")}
-
 Name:           pynac
-Version:        0.3.2
-Release:        1%{?dist}
+Version:        0.6.9
+Release:        1
 Summary:        Manipulation of symbolic expressions
+Group:		Sciences/Mathematics
 License:        GPLv2+
 URL:            http://www.sagemath.org/packages/upstream/pynac/index.html
-Source0:        http://www.sagemath.org/packages/upstream/pynac/%{name}-%{version}.tar.bz2
+Source0:	https://github.com/pynac/pynac/releases/download/pynac-%{version}/pynac-%{version}.tar.bz2
 Source1:        %{name}.rpmlintrc
 
-BuildRequires:  python-devel
+BuildRequires:  python2-devel
 BuildRequires:	readline-devel
 %rename %{old_libpynac}
 
@@ -38,9 +37,12 @@ Headers and libraries for developing with %{name}.
 %setup -q
 
 %build
-export CXXFLAGS="%{optflags} -I%{_includedir}/python%{pyver}"
+export PYTHON=%__python2
+export CC=gcc
+export CXX=g++
+export CXXFLAGS="%{optflags}"
 %configure2_5x --disable-static
-make %{?_smp_mflags}
+%make
 
 %install
 make install DESTDIR=%{buildroot} INSTALL="install -p"
