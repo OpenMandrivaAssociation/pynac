@@ -13,6 +13,7 @@ Source1:        %{name}.rpmlintrc
 
 BuildRequires:  python2-devel
 BuildRequires:	readline-devel
+BuildRequires:	gmp-devel
 %rename %{old_libpynac}
 
 %description
