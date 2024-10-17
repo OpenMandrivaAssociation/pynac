@@ -7,7 +7,7 @@ Release:        1
 Summary:        Manipulation of symbolic expressions
 Group:		Sciences/Mathematics
 License:        GPLv2+
-URL:            http://www.sagemath.org/packages/upstream/pynac/index.html
+URL:            https://www.sagemath.org/packages/upstream/pynac/index.html
 Source0:	https://github.com/pynac/pynac/releases/download/pynac-%{version}/pynac-%{version}.tar.bz2
 Source1:        %{name}.rpmlintrc
 
