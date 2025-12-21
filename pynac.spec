@@ -11,6 +11,11 @@ URL:            https://www.sagemath.org/packages/upstream/pynac/index.html
 Source0:	https://github.com/pynac/pynac/releases/download/pynac-%{version}/pynac-%{version}.tar.bz2
 Source1:        %{name}.rpmlintrc
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:  python2-devel
 BuildRequires:	readline-devel
 BuildRequires:	gmp-devel
