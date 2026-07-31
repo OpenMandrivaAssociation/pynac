@@ -2,7 +2,7 @@
 %define		old_libpynac_devel	%mklibname pynac -d
 
 Name:           pynac
-Version:        0.6.9
+Version:        0.7.29
 Release:        1
 Summary:        Manipulation of symbolic expressions
 Group:		Sciences/Mathematics
